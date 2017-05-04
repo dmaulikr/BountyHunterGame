@@ -6,6 +6,8 @@ public class DialogueHolder : MonoBehaviour {
 
     public string[] dialogue;
 
+    private bool canTalk = false;
+
     private DialogueManager dialogManager;
 
 	// Use this for initialization
@@ -18,11 +20,26 @@ public class DialogueHolder : MonoBehaviour {
 		
 	}
 
+    private void OnGUI()
+    {
+        if(canTalk)
+        {
+            GUI.Box(new Rect(Screen.width * 0.5f - (185f * 0.5f), 200, 185, 22), "Press Space to talk.");
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "Player" && Input.GetKeyDown(KeyCode.Space) && !dialogManager.isDialogActive())
+        canTalk = true;
+
+        if (other.tag == "Player" && Input.GetKeyDown(KeyCode.Space) && !dialogManager.isDialogActive())
         {
             dialogManager.ShowBox(dialogue);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        canTalk = false;
     }
 }
