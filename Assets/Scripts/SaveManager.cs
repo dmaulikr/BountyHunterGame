@@ -24,7 +24,7 @@ public class SaveManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.S)) {
+		if (Input.GetKeyDown (KeyCode.G)) {
 			level = LevelManager.currentLevel;
 			exp = LevelManager.currentExp;
 			maxExp = LevelManager.maxExp;

@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour {
 	public static int direction = 1;
 	public Transform target;
 	private float speed = 1.0f;
+    public int experience = 20;
 
 
 	// Use this for initialization
@@ -38,7 +39,7 @@ public class Enemy : MonoBehaviour {
 		GameObject.Find("lb").GetComponent<EnemyHealth>().updateHealthDamage();
 		if (health <= 0) {
 			Destroy(gameObject);
-			LevelManager.addExp (20);
+			LevelManager.addExp (experience);
 		}
 	}
 }
