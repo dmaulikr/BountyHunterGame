@@ -33,9 +33,18 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKey (KeyCode.D)|| Input.GetKey (KeyCode.RightArrow)) {
 			direction = 3;
 		}
-		if (Input.GetKey("return") && Time.time > nextFire){
+		if (Input.GetKey(KeyCode.Return) && Time.time > nextFire){
 			nextFire = Time.time + fireRate;
 			Instantiate (arrow, transform.position, transform.rotation);
 		}
 	}
+    
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "apple")
+        {
+            PlayerHealthManager.SetMaxHealth();
+            Destroy(collision.gameObject);
+        }
+    }
 }

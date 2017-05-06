@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour {
 
@@ -24,6 +25,7 @@ public class PlayerHealthManager : MonoBehaviour {
 		if(currentHealth <= 0)
         {
             gameObject.SetActive(false);
+            SceneManager.LoadScene("EndGame");
         }
         healthBar.value = currentHealth;
         HPText.text = "HP: " + currentHealth + "/" + maxHealth;
@@ -34,7 +36,7 @@ public class PlayerHealthManager : MonoBehaviour {
         currentHealth -= damage;
     }
 
-    public void SetMaxHealth()
+    public static void SetMaxHealth()
     {
         Debug.Log("Hero fully recovered");
         currentHealth = maxHealth;
