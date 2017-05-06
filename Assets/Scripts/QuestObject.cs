@@ -38,5 +38,6 @@ public class QuestObject : MonoBehaviour {
         questManager.showQuestText(endText);
         questManager.questCompleted[questNumber] = true;
         this.gameObject.SetActive(false);
+        LevelManager.addExp(60);
     }
 }
