@@ -36,6 +36,7 @@ public class PlayerHealthManager : MonoBehaviour {
 
     public void SetMaxHealth()
     {
+        Debug.Log("Hero fully recovered");
         currentHealth = maxHealth;
     }
 

@@ -9,11 +9,13 @@ public class MoneyPickup : MonoBehaviour {
     private MoneyManager moneyManager;
 
     private bool canGrab;
+    private AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
         moneyManager = FindObjectOfType<MoneyManager>();
-	}
+        audioSource = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,6 +30,7 @@ public class MoneyPickup : MonoBehaviour {
 
             if(Input.GetKeyDown(KeyCode.E))
             {
+                audioSource.Play();
                 moneyManager.addMoney(moneyValue);
                 Destroy(this.gameObject);
             }
