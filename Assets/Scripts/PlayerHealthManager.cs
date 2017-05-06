@@ -8,8 +8,8 @@ public class PlayerHealthManager : MonoBehaviour {
     public Slider healthBar;
     public Text HPText;
 
-    public int maxHealth;
-    public int currentHealth;
+    public static int maxHealth = 100;
+    public static int currentHealth = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -38,4 +38,11 @@ public class PlayerHealthManager : MonoBehaviour {
     {
         currentHealth = maxHealth;
     }
+
+	public static void setHealth(int current, int max)
+	{
+		currentHealth = current;
+		maxHealth = max;
+	}
+		
 }
