@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour {
 		health = parent.health;
 		Debug.Log ("Health" + health);
 		Vector3 newPosition = transform.position;
-		newPosition.x -= 0.036F;
+		newPosition.x -= 0.03F;
 		transform.position = newPosition;
 		transform.localScale += new Vector3(-0.36F, 0, 0);
 	}
