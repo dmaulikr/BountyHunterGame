@@ -38,7 +38,7 @@ public class LevelManager : MonoBehaviour {
 		currentLevel++;
 	}
 
-	public void addExp(int exp)
+	public static void addExp(int exp)
 	{
 		currentExp += exp;
 	}

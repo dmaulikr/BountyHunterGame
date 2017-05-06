@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour {
 		GameObject.Find("lb").GetComponent<EnemyHealth>().updateHealthDamage();
 		if (health <= 0) {
 			Destroy(gameObject);
+			LevelManager.addExp (20);
 		}
 	}
 }
