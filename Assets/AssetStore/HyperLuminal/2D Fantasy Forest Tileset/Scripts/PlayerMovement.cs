@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
 	/// Player rigidbody
 	/// </summary>
-	private Rigidbody2D rbody;
+	//private Rigidbody2D rbody;
     #endregion
 
     // Use this for initialization
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 		animator = GetComponent<Animator>();
 
         // get the rigidbody
-        rbody = GetComponent<Rigidbody2D>();
+        //rbody = GetComponent<Rigidbody2D>();
 
 		// set initial position
 		lastPosition = transform.position;

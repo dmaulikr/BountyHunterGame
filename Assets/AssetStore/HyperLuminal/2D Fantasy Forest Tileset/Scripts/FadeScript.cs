@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class FadeScript : MonoBehaviour
@@ -99,8 +100,8 @@ public class FadeScript : MonoBehaviour
 	/// </summary>
 	private void ChangeLevel()
 	{
-		int levelID = Application.loadedLevel + 1;
-		if(levelID > Application.levelCount - 1){ levelID = 0; }
-		Application.LoadLevel(levelID);
+		int levelID = SceneManager.GetActiveScene().buildIndex + 1;
+		if(levelID > SceneManager.sceneCountInBuildSettings - 1){ levelID = 0; }
+		SceneManager.LoadScene(levelID);
 	}
 }
