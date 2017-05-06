@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MoneyManager : MonoBehaviour {
 
     public Text moneyText;
-    public int currentGold;
+    public static int currentGold;
 
 	// Use this for initialization
 	void Start () {
@@ -16,12 +16,16 @@ public class MoneyManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		moneyText.text = "Gold: " + currentGold;
 	}
 
     public void addMoney(int gold)
     {
         currentGold += gold;
-        moneyText.text = "Gold: " + currentGold;
     }
+
+	public static void setMoney(int gold)
+	{
+		currentGold = gold;
+	}
 }

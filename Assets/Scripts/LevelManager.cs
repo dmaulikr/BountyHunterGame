@@ -7,9 +7,9 @@ public class LevelManager : MonoBehaviour {
 
 	public Text LvlText;
 	public Text ExpText;
-	public int currentLevel;
-	public int maxExp;
-	public int currentExp;
+	public static int currentLevel;
+	public static int maxExp;
+	public static int currentExp;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 
-	public void addLevel()
+	public static void addLevel()
 	{
 		currentExp = 0;
 		maxExp *= 2;
@@ -41,5 +41,11 @@ public class LevelManager : MonoBehaviour {
 	public void addExp(int exp)
 	{
 		currentExp += exp;
+	}
+
+	public static void setValues(int level, int exp, int max){
+		currentLevel = level;
+		currentExp = exp;
+		maxExp = max;
 	}
 }
