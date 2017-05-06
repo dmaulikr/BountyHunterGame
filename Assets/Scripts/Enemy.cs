@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour {
 	{
 		health -= damage;
 		Debug.Log (health);
-		GameObject.Find("lb").GetComponent<EnemyHealth>().updateHealthDamage();
+		gameObject.GetComponentInChildren<EnemyHealth>().updateHealthDamage();
 		if (health <= 0) {
 			Destroy(gameObject);
 			LevelManager.addExp (20);
