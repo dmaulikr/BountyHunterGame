@@ -12,15 +12,18 @@ public class PlayerController : MonoBehaviour {
 	private float fireRate = 0.1f;
 	private float nextFire = 0;
 	public static int direction = 1;
+	public static Transform positionPlayer;
+	public static GameObject player;
 
 
 	// Use this for initialization
 	void Start () {
-		
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		positionPlayer = gameObject.transform;
 		if (Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.UpArrow)) {
 			direction = 0;
 		}
@@ -47,4 +50,8 @@ public class PlayerController : MonoBehaviour {
             Destroy(collision.gameObject);
         }
     }
+
+	public static void setPosition(Transform playerP){
+		player.transform.position = playerP.position;
+	}
 }
